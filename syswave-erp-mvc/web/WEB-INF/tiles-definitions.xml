@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+      "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+<tiles-definitions>  
+   <!-- Base Template Define -->
+   <definition name="layout-definition" 
+       template="/WEB-INF/layouts/application.jsp">  
+       <!-- put-attribute name="title" value="" /-->  
+       <!-- put-attribute name="header" value="/WEB-INF/basefragments/_header.jsp" /-->  
+       <!-- put-attribute name="menu" value="/WEB-INF/basefragments/_menu.jsp" / -->  
+       <put-attribute name="content" value="" />  
+       <!--put-attribute name="footer" value="/WEB-INF/basefragments/_footer.jsp" /-->  
+   </definition>  
+ 
+   <!-- Main Site -->
+   <definition name="main/index" extends="layout-definition">  
+       <!--put-attribute name="title" value="Home Page" /-->  
+       <put-attribute name="content" value="/WEB-INF/views/main/index.jsp" />  
+   </definition>  
+      
+   <!-- Person Site -->
+   <definition name="personas/index" extends="layout-definition">  
+       <!--put-attribute name="title" value="Contact Us" /-->  
+       <put-attribute name="content" value="/WEB-INF/views/personas/index.jsp" />  
+   </definition>  
+   
+   <definition name="personas/form" extends="layout-definition">  
+       <!--put-attribute name="title" value="Contact Us" /-->  
+       <put-attribute name="content" value="/WEB-INF/views/personas/form.jsp" />  
+   </definition> 
+   
+   <definition name="personas/show" extends="layout-definition">  
+       <!--put-attribute name="title" value="Contact Us" /-->  
+       <put-attribute name="content" value="/WEB-INF/views/personas/show.jsp" />  
+   </definition> 
+</tiles-definitions>

@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="495" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="5" uuid="ff5b8dd6-3feb-4e04-b0f4-6788419bd818">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/com/syswave/reports/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="id_documento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT id, folio, serie, fecha_elaboracion, fecha_vigencia, es_activo, 
+       subtotal, factor, monto, total, descripcion, moneda, es_aplicado, 
+       nombre, pagado, saldo_actual, comprobante, emisor, codigo_postal_emisor, 
+       localidad_emisor, calle_emisor, colonia_emisor, no_exterior_emisor, 
+       no_interior_emisor, medios_contacto, condiciones, receptor, codigo_postal_receptor, 
+       localidad_receptor, calle_receptor, colonia_receptor, no_exterior_receptor, 
+       no_interior_receptor
+FROM rpt_documento_comerciales
+WHERE id = $P{id_documento}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="folio" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="serie" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_elaboracion" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_vigencia" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="es_activo" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="subtotal" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="factor" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="monto" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="moneda" class="java.lang.String"/>
+	<field name="es_aplicado" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="pagado" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldo_actual" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="comprobante" class="java.lang.String"/>
+	<field name="emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_postal_emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localidad_emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="calle_emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="colonia_emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_exterior_emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_interior_emisor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="medios_contacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="condiciones" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo_postal_receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="localidad_receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="calle_receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="colonia_receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_exterior_receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="no_interior_receptor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="300" height="65" uuid="5a923b0c-cc21-49ac-86ce-75f9ab9f5716"/>
+				<imageExpression><![CDATA[getClass().getResourceAsStream("/com/syswave/reports/Header.png")]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="306" y="0" width="189" height="20" forecolor="#05A7F6" uuid="56ac3ab4-3472-4215-ac4a-723f558cdd24"/>
+				<textElement textAlignment="Center">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="306" y="20" width="189" height="20" forecolor="#05A7F6" uuid="327e31d4-5acd-4c7e-9e12-ce82b98a26ce"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Rev. 2.0 24102014]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="339" y="40" width="45" height="20" forecolor="#05A7F6" uuid="a854cf7f-1b66-4344-9736-b1b48e7fe55d"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folio:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="387" y="40" width="108" height="20" uuid="06dbfa4b-e8bf-4607-9ecf-8a245e6f69a7"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{serie}.concat(" ").concat($F{folio})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="339" y="76" width="45" height="20" forecolor="#05A7F6" uuid="f75d4c69-8d0b-4c98-9456-5c14f38e5670"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="96" width="63" height="20" forecolor="#05A7F6" uuid="832c5d2b-7008-4757-9ac1-bbf67f22e3c7"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vigencia:]]></text>
+			</staticText>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="387" y="76" width="108" height="20" uuid="935e0a71-d174-4015-8545-f7511f94f65b"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_elaboracion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="yyyy/MM/dd">
+				<reportElement x="387" y="96" width="108" height="20" uuid="e31446e6-8aaa-43d0-bad4-66155cdf0b2e"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_vigencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="66" width="279" height="20" forecolor="#C0C7B1" uuid="7191b0e0-4a5e-4d11-ab75-0ec785d030f6"/>
+				<textFieldExpression><![CDATA["C." + $F{calle_emisor} + 
+" # " + $F{no_exterior_emisor} + 
+(!$F{no_interior_emisor}.isEmpty()? " - " + $F{no_interior_emisor}:"") + 
+", Col." + $F{colonia_emisor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="81" width="279" height="20" forecolor="#C0C7B1" uuid="358caf85-b3f9-40e2-af72-8aeb9b3d479a"/>
+				<textFieldExpression><![CDATA["C.P: " + $F{codigo_postal_emisor} + 
+" " + $F{localidad_emisor}.substring(0, $F{localidad_emisor}.lastIndexOf( "," ))]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="1" y="96" width="278" height="20" forecolor="#C0C7B1" uuid="7ec2acef-8853-4804-9d57-1c7001b94a69"/>
+				<textFieldExpression><![CDATA[$F{medios_contacto}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="74">
+			<rectangle>
+				<reportElement x="1" y="0" width="495" height="72" uuid="cceb363a-e67b-4540-b046-b057639a2fe2"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="17" y="10" width="82" height="20" forecolor="#05A7F6" uuid="a6891bf7-2507-4d29-9afd-e81b0ebfe602"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dirigido a:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="17" y="30" width="82" height="20" forecolor="#05A7F6" uuid="67cfad28-5dc4-42a0-947b-806402884d4f"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Domicilio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="2" y="50" width="97" height="20" forecolor="#05A7F6" uuid="6047ca4a-7eb5-4774-980d-5364e31a29ff"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Condiciones:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="104" y="10" width="387" height="20" uuid="00b50d3b-9b1b-454f-ae73-f61107d7cebc"/>
+				<textFieldExpression><![CDATA[$F{receptor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="30" width="387" height="20" uuid="c09c64b4-a868-4e3f-9aa0-367982256ee2"/>
+				<textFieldExpression><![CDATA["C." + $F{calle_receptor} + 
+" # " + $F{no_exterior_receptor} + (!$F{no_interior_receptor}.isEmpty()? " - " + $F{no_interior_receptor}:"") + 
+", Col." + $F{colonia_receptor} + 
+", "+ $F{localidad_receptor}.substring(0, $F{localidad_receptor}.lastIndexOf( "," ))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="104" y="50" width="387" height="20" uuid="411e1761-cd6e-48df-9ade-50e291694c84"/>
+				<textFieldExpression><![CDATA[$F{condiciones}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<subreport>
+				<reportElement x="0" y="0" width="495" height="32" uuid="5183329b-436c-4788-b13f-244905739a0b"/>
+				<subreportParameter name="id_documento">
+					<subreportParameterExpression><![CDATA[$F{id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR}+"documento_detalles.jasper")]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="121" splitType="Stretch">
+			<image>
+				<reportElement positionType="Float" mode="Opaque" x="-51" y="0" width="596" height="119" uuid="36e0fbf3-699f-4f4a-9ec8-d37c91bf5781"/>
+				<imageExpression><![CDATA[getClass().getResourceAsStream("/com/syswave/reports/Footer.png")]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="204" y="76" width="127" height="20" forecolor="#2800FF" uuid="0927d9b0-36ff-4791-b51c-6493f869ce27"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[www.syswave.com.mx]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="199">
+			<image>
+				<reportElement positionType="Float" mode="Opaque" x="-51" y="80" width="596" height="119" uuid="73d87522-809e-4520-87b6-a89036c0e89c"/>
+				<imageExpression><![CDATA[getClass().getResourceAsStream("/com/syswave/reports/Footer.png")]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement x="0" y="0" width="495" height="80" uuid="5111d5c1-9aca-46bc-8f19-d8ad38e88f3a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="204" y="156" width="127" height="20" forecolor="#2800FF" uuid="6b76eafb-1c14-43bb-b2a0-62490598e083"/>
+				<textElement>
+					<font fontName="DejaVu Sans"/>
+				</textElement>
+				<text><![CDATA[www.syswave.com.mx]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="0" width="82" height="20" forecolor="#05A7F6" uuid="a67f1476-11fd-4d7d-9e32-5965b1580d3d"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Subtotal:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="303" y="20" width="100" height="20" forecolor="#05A7F6" uuid="666e2f13-80bd-44d3-b25e-3add2a1ab3a5"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["IVA (" + $F{factor} +"%):"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="321" y="40" width="82" height="20" forecolor="#05A7F6" uuid="db16d271-5071-4231-b274-57fda2f16aed"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="321" y="60" width="82" height="20" forecolor="#05A7F6" uuid="06287b6d-4e2d-42fc-9444-1c3acc473ef1"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="DejaVu Sans" size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Moneda:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="403" y="0" width="92" height="20" uuid="47ac5f41-8dde-4cba-ad46-2146a413f67d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="20" width="92" height="20" uuid="f613ceb0-29c6-432a-a2af-9e86bff7d01d"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{monto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="40" width="92" height="20" uuid="906dfdf1-e0d8-4a41-8729-5eec636e4224"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="403" y="60" width="92" height="20" uuid="4aba6653-d26d-447b-8db7-50ab19fa65d3"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{moneda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

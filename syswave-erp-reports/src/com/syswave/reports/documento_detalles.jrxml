@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="545" leftMargin="0" rightMargin="50" topMargin="0" bottomMargin="0" uuid="59c445fd-c3dc-4dca-ab23-49963a29b0ce">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_documento" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT consecutivo,
+		descripcion,
+		cantidad,
+		precio_final,
+		importe
+FROM miempresa.documento_detalles
+WHERE id_documento = $P{id_documento}]]>
+	</queryString>
+	<field name="consecutivo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="cantidad" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="precio_final" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="importe" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToTallestObject" x="0" y="2" width="495" height="20" uuid="ca4c683f-cde5-4b25-b3ee-2e14d7e0d7ce"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="2" width="100" height="20" uuid="ef22ef65-d187-492b-899c-e18fa2875f35"/>
+				<text><![CDATA[Consecutivo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="204" y="3" width="100" height="20" uuid="cff8629a-8bd6-4d5d-988b-54805a6f861e"/>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="104" y="2" width="100" height="20" uuid="ab219684-61da-46e0-975b-2fbbd93ed0cd"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="345" y="3" width="100" height="20" uuid="2e5a567c-ecf3-4c6e-bb5c-32a6b2bd9d5a"/>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="2" width="100" height="20" uuid="12b076b5-bb2a-4c49-a4f0-2710a8fb4032"/>
+				<text><![CDATA[Importe]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="0" width="100" height="20" uuid="4bb4d407-e231-4b9c-b6c6-e08527eb7f55"/>
+				<textFieldExpression><![CDATA[$F{consecutivo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="1" width="100" height="20" uuid="b0d8dc94-0176-4e53-bf80-85f0e8bbb4f2"/>
+				<textFieldExpression><![CDATA[$F{precio_final}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="103" y="0" width="100" height="20" uuid="953bc89f-7f6c-442d-9022-b6eb24e67996"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="445" y="0" width="100" height="20" uuid="b0bc186e-ce24-4dd3-a54d-3b13b0d9269c"/>
+				<textFieldExpression><![CDATA[$F{importe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="204" y="0" width="100" height="20" uuid="01572511-1f7e-413c-94f5-c30f0ac10d1e"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
